@@ -73,7 +73,7 @@ $(window).scroll(function(){
       this.Nav[index].classList.add('current_dot');
     }}
 
-
+      
   const slider = new SliderClip(document.querySelector('.slider'));
 }
 
@@ -86,4 +86,31 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("offchat-menu").checked = true;
   }, 5000);
 });
+
+
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
+document.querySelectorAll('.icon').forEach(icon => {
+  icon.addEventListener('click', () => {
+      console.log(`Opening: ${icon.href}`);
+  });
+});
+
+
+// document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
+
 
